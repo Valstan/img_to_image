@@ -1,5 +1,21 @@
 from PIL import Image
 
+# Откуда брать изображения
+old_patch = '' # Пример 'first/second/' слеш не может быть вначале или один
+
+# Где лежит накладываемое изображение
+overlay_path = ''
+
+# Куда сохранять новые изображения
+new_patch = ''
+
+# Расширение файлов, например '.png'
+file_ext = ''
+
+# Смещение в пикселях по ширине от левого края
+left_offset = 0
+right_offset = 0
+
 img = Image.open('00001111.png')
 
 name = "24.03.15 №60 КОН.АНАЛИЗ - "
@@ -13,7 +29,7 @@ for a in range(1,441):
     elif 100 <= a < 1000:
         name_image = name + '0' + str(a)
 
-    old_image = Image.open('1234/' + name_image + '.png')
+    old_image = Image.open(old_patch + name_image + file_ext)
 
     # Смещение в пикселях от левого верхнего угла
     # два раза img это чтобы прозрачность сработала
